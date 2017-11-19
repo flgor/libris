@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="libris.ico">
 
-    <title>Cover Template for Bootstrap</title>
+    <title>Libris, manage your books</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -26,19 +25,17 @@
 
             <header class="masthead clearfix">
                 <div class="inner">
-                    <h3 class="masthead-brand">Cover</h3>
+                    <h3 class="masthead-brand">Libris</h3>
                     <nav class="nav nav-masthead">
                         <a class="nav-link active" href="#">Home</a>
-                        <a class="nav-link" href="#">Features</a>
                         <a class="nav-link" href="#">Contact</a>
                     </nav>
                 </div>
             </header>
 
             <main role="main" class="inner cover">
-                <h1 class="cover-heading">Cover your page.</h1>
-                <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download,
-                    edit the text, and add your own fullscreen background photo to make it your own.</p>
+                <h1 class="cover-heading">What is Libris?</h1>
+                <p class="lead">Libris, an application to help you manage your books.</p>
                 <p class="lead">
                     <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
                 </p>
@@ -46,8 +43,8 @@
 
             <footer class="mastfoot">
                 <div class="inner">
-                    <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a
-                            href="https://twitter.com/mdo">@mdo</a>.</p>
+                    <p>Powered by <a
+                            href="https://twitter.com/mdo">@flgor</a>.</p>
                 </div>
             </footer>
 
@@ -64,6 +61,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
-<script src="/js/nananana.js" />
+<script src="/js/nananana.js">
+</script>
+
 </body>
 </html>
