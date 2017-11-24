@@ -44,7 +44,7 @@
             <footer class="mastfoot">
                 <div class="inner">
                     <p>Powered by <a
-                            href="https://twitter.com/mdo">@flgor</a>.</p>
+                            href="https://twitter.com/flgor">@flgor</a>.</p>
                 </div>
             </footer>
 
