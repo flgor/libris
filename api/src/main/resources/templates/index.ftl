@@ -31,7 +31,7 @@
                 <h1 class="cover-heading">What is Libris?</h1>
                 <p class="lead">Libris, an application to help you manage your books.</p>
                 <p class="lead">
-                    <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+                    <a href="/login" class="btn btn-lg btn-secondary">Login</a>
                 </p>
             </main>
 

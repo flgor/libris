@@ -9,11 +9,6 @@
         body {
             padding-top: 5rem;
         }
-
-        .starter-template {
-            padding: 3rem 1.5rem;
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -22,16 +17,31 @@
 <#--https://getbootstrap.com/docs/4.0/examples/starter-template/-->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="/">Libris</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 </nav>
 
 <main role="main" class="container">
 
-    <div class="starter-template">
-        <h1>Login Form</h1>
+    <div class="row">
+        <form class="col-md-6 offset-md-3">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.
+                </small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">
+                    Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
     </div>
 
 </main><!-- /.container -->
