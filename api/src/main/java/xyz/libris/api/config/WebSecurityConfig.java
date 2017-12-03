@@ -15,8 +15,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         // @formatter:off
         http
+            .csrf()
+                .disable()
             .authorizeRequests()
-                .antMatchers("/","/js/**","/css/**", "/favicon.ico").permitAll()
+                .antMatchers("/",
+                        "/join",
+                        "/js/**",
+                        "/css/**",
+                        "/favicon.ico").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -33,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // @formatter:off
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER");
+                .withUser("lilla@gmail.com").password("lilla").roles("USER");
         // @formatter:on
     }
 }

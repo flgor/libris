@@ -1,0 +1,19 @@
+body {
+    padding-top: 3rem;
+}
+
+.signInUpDescription {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
+
+.login-result-info {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+

@@ -5,7 +5,7 @@
 <#include "components/meta.ftl">
 <#include "components/bootstrapcss.ftl">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this index -->
     <link href="/css/cover.css" rel="stylesheet">
 </head>
 
@@ -31,7 +31,8 @@
                 <h1 class="cover-heading">What is Libris?</h1>
                 <p class="lead">Libris, an application to help you manage your books.</p>
                 <p class="lead">
-                    <a href="/login" class="btn btn-lg btn-secondary">Login</a>
+                    <a href="/login" class="btn btn-lg btn-secondary">Sign In</a>
+                    <a href="/join" class="btn btn-lg btn-secondary">Sign Up</a>
                 </p>
             </main>
 
