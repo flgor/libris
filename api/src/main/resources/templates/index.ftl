@@ -4,8 +4,7 @@
 <#include "components/analitics.ftl">
 <#include "components/meta.ftl">
 <#include "components/bootstrapcss.ftl">
-
-    <!-- Custom styles for this index -->
+    <title>Libris, manage your books</title>
     <link href="/css/cover.css" rel="stylesheet">
 </head>
 

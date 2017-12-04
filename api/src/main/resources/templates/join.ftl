@@ -4,6 +4,7 @@
 <#include "components/analitics.ftl">
 <#include "components/meta.ftl">
 <#include "components/bootstrapcss.ftl">
+    <title>Libris, sign up now.</title>
     <link href="/css/signinup.css" rel="stylesheet">
 </head>
 
