@@ -1,6 +1,8 @@
 package xyz.libris.api.security;
 
 import com.google.common.collect.ImmutableList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,7 +13,7 @@ import xyz.libris.api.user.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
     private final UserRepository userRepository;
 
     public UserDetailsServiceImpl(UserRepository userRepository) {
@@ -23,6 +25,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         User user = userRepository.findUserByEmail(username);
 
         if (user == null) {
+            log.info("User with username: [" + username + "] not found.");
             throw new UsernameNotFoundException("User with email: [" + username + "] not found.");
         }
 

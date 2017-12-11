@@ -25,6 +25,8 @@ public class UserService {
         user.setUniqueId(RandomStringUtils.randomAlphanumeric(15));
 
         user.setPassword(bCryptPasswordEncoder.encode(password));
+
+        userRepository.save(user);
     }
 
     public User findUserByEmail(String email) {

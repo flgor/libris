@@ -34,7 +34,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
             .authorizeRequests()
                 .antMatchers("/",
-                        "/join",
+                        "/api/v1/user",
+                        "/join*",
                         "/js/**",
                         "/css/**",
                         "/favicon.ico").permitAll()

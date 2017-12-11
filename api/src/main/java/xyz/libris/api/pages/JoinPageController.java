@@ -11,4 +11,9 @@ public class JoinPageController {
     public String joinPage() {
         return "join";
     }
+
+    @RequestMapping(value = "/join_beta", method = RequestMethod.GET)
+    public String joinBetaPage() {
+        return "join_beta";
+    }
 }
