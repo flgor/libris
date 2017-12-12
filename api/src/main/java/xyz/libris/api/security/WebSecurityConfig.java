@@ -38,8 +38,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/join*",
                         "/js/**",
                         "/css/**",
-                        "/favicon.ico").permitAll()
-                .anyRequest().authenticated()
+                        "/favicon.ico")
+                    .permitAll()
+                .anyRequest()
+                    .authenticated()
                 .and()
             .formLogin()
                 .loginPage("/login")
