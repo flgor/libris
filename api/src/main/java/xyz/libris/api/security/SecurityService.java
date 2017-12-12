@@ -28,7 +28,9 @@ public class SecurityService {
         return null;
     }
 
-    public void autologin(String username, String password) {
+    public void autoLogin(String username, String password) {
+        // This can be done from frontend.
+
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
 

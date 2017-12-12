@@ -44,21 +44,25 @@
 <#include "components/bootstrapjs.ftl">
 
 <script type="text/javascript">
-    var createAccount = function () {
+    var createAccount = function (event) {
+        event.preventDefault();
+        $('#signUpButton').attr('disabled', 'disabled');
+
         $.ajax({
             url: "/api/v1/user",
             type: "POST",
             data: JSON.stringify(getRequest()),
             contentType: "application/json; charset=utf-8",
-            dataType: "json"
-        })
-                .done(function () {
-                    console.log("success");
-                    location.href = '/dashboard';
-                })
-                .fail(function (jqXHR, textStatus, errorThrown) {
-                    console.log("Error:", jqXHR);
-                });
+            dataType: "text",
+            success: function (response) {
+                console.log("success", response);
+                location.href = '/dashboard';
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("error", xhr);
+                $('#signUpButton').removeAttr('disabled');
+            }
+        });
     };
 
     var getRequest = function () {
