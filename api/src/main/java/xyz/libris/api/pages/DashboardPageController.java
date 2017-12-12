@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class DashboardPageController {
 
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
-    public String indexPage() {
+    public String dashboardPage() {
         return "dashboard";
     }
 }

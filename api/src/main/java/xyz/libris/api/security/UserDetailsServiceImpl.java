@@ -22,7 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findUserByEmail(username);
+        User user = userRepository.findByEmail(username);
 
         if (user == null) {
             log.info("User with username: [" + username + "] not found.");
@@ -30,7 +30,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         // you can override user details as necessary.
-        return new org.springframework.security.core.userdetails.User(user.getEmail(),
+        return new SecUser(user.getEmail(),
+                user.getUniqueId(),
                 user.getPassword(),
                 ImmutableList.of(new SimpleGrantedAuthority("USER")));
     }
