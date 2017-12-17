@@ -31,7 +31,7 @@
                 <p class="lead">Libris, an application to help you manage your books.</p>
                 <p class="lead">
                     <a href="/login" class="btn btn-lg btn-secondary">Sign In</a>
-                    <a href="/join" class="btn btn-lg btn-secondary">Sign Up</a>
+                    <a href="/join_beta" class="btn btn-lg btn-secondary">Sign Up (Beta)</a>
                 </p>
             </main>
 
