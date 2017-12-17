@@ -2,6 +2,8 @@ package xyz.libris.api.book;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import xyz.libris.api.user.User;
@@ -11,6 +13,7 @@ import java.util.List;
 @Service
 @Transactional
 public class BookService {
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     private final BookRepository bookRepository;
 
@@ -35,6 +38,7 @@ public class BookService {
     }
 
     public List<Book> getAll(User user) {
+        log.info("Get all books for user: [" + user.getEmail() + "].");
         return bookRepository.findAllByOwnerId(user.getId());
     }
 }
