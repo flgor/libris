@@ -42,20 +42,20 @@
     <div class="row">
         <table class="table table-hover">
             <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Title</th>
-                <th scope="col">Author</th>
-                <th scope="col">Year</th>
-                <th scope="col">Actions</th>
+            <tr class="row">
+                <th scope="col" class="col-md-2">#</th>
+                <th scope="col" class="col-md-4">Title</th>
+                <th scope="col" class="col-md-4">Author</th>
+                <th scope="col" class="col-md-1">Year</th>
+                <th scope="col" class="col-md-1">Actions</th>
             </tr>
             </thead>
             <tbody>
                 <#list books as book>
-                <tr>
-                    <th scope="row" class="col-md-2">${book.uniqueId}</th>
+                <tr class="row">
+                    <td class="col-md-2">${book.uniqueId}</td>
                     <td class="col-md-4">${book.title}</td>
-                    <td class="col-md-5">${book.author}</td>
+                    <td class="col-md-4">${book.author}</td>
                     <td class="col-md-1">${book.year?c}</td>
                     <td class="col-md-1">(soon)</td>
                 </tr>
