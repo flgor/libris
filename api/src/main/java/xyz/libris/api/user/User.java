@@ -3,7 +3,7 @@ package xyz.libris.api.user;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "accounts")
 public class User {
 
     @Id
