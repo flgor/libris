@@ -23,7 +23,7 @@
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">ToDo</a>
+                   aria-haspopup="true" aria-expanded="false">${user.fullName}</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="/logout">Logout</a>
                 </div>
@@ -36,11 +36,36 @@
 
     <div class="starter-template">
         <h1>Welcome to libris.</h1>
-        <p class="lead">Manage your library. (Coming soon)</p>
+        <p class="lead">Manage your library.</p>
     </div>
 
     <div class="row">
-        <form class="col-md-6 offset-md-3" action="#">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Year</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                <#list books as book>
+                <tr>
+                    <th scope="row" class="col-md-2">${book.uniqueId}</th>
+                    <td class="col-md-4">${book.title}</td>
+                    <td class="col-md-5">${book.author}</td>
+                    <td class="col-md-1">${book.year?c}</td>
+                    <td class="col-md-1">(soon)</td>
+                </tr>
+                </#list >
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <form class="col-md-6 books-table" action="#">
             <div class="form-group">
                 <label for="inputTitle">Title</label>
                 <input type="text" class="form-control" id="inputTitle"
@@ -56,7 +81,7 @@
                 <input type="text" class="form-control" id="inputYear" placeholder="Year"
                        name="year">
             </div>
-            <button type="submit" class="btn btn-primary" id="addBookButton">Add</button>
+            <button type="submit" class="btn btn-primary" id="addBookButton">Add Book.</button>
         </form>
     </div>
 
