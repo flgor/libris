@@ -1,12 +1,14 @@
-package xyz.libris.api.google.books.data;
+package xyz.libris.api.google.book.finder.data;
+
+import com.google.common.collect.ImmutableList;
 
 import java.util.List;
 
-public class GoogleBookSearchResponse {
+public class GoogleBookSearchResult {
 
     private String kind;
     private Integer totalItems;
-    private List<GoogleBook> items;
+    private List<GoogleBook> items = ImmutableList.of();
 
     public String getKind() {
         return kind;

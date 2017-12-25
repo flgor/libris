@@ -1,15 +1,17 @@
-package xyz.libris.api.google.books.data;
+package xyz.libris.api.google.book.finder.data;
+
+import com.google.common.collect.ImmutableList;
 
 import java.util.List;
 
 public class GoogleVolumeInfo {
 
     private String title;
-    private List<String> authors;
+    private List<String> authors = ImmutableList.of();
     private String publisher;
     private String publishedDate;
     private String description;
-    private List<GoogleIndustryIdentifier> industryIdentifiers;
+    private List<GoogleIndustryIdentifier> industryIdentifiers = ImmutableList.of();
     private GoogleImageLink imageLinks;
 
     public String getTitle() {

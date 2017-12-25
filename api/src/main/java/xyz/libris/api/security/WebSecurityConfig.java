@@ -34,6 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
             .authorizeRequests()
                 .antMatchers("/",
+                        "/api/v1/**/public",
                         "/api/v1/user",
                         "/join*",
                         "/js/**",
