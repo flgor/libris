@@ -1,7 +1,8 @@
-package xyz.libris.api.google.book.dto;
+package xyz.libris.api.book.google.dto;
 
 public class GoogleBookDto {
 
+    private String googleId;
     private String title;
     private String authors;
     private String publisher;
@@ -11,6 +12,14 @@ public class GoogleBookDto {
     private String isbn13;
     private String smallThumbnail;
     private String thumbnail;
+
+    public String getGoogleId() {
+        return googleId;
+    }
+
+    public void setGoogleId(String googleId) {
+        this.googleId = googleId;
+    }
 
     public String getTitle() {
         return title;

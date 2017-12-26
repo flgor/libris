@@ -1,4 +1,4 @@
-package xyz.libris.api.google.book.dto;
+package xyz.libris.api.book.google.dto;
 
 import java.util.List;
 

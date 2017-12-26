@@ -19,7 +19,7 @@
     </div>
 
     <div class="row">
-        <form class="col-md-6 offset-md-3" action="/login" method="post">
+        <form class="col-6 offset-3" action="/login" method="post">
             <div class="login-result-info">
             <#if RequestParameters.error??>
                 <div class="error">Invalid username or password.</div>

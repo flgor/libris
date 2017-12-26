@@ -1,19 +1,19 @@
 package xyz.libris.api.unit;
 
 import org.junit.Test;
-import xyz.libris.api.google.book.finder.GoogleBookFinder;
-import xyz.libris.api.google.book.finder.data.GoogleBookSearchResult;
+import xyz.libris.api.book.google.client.GoogleBookSearcher;
+import xyz.libris.api.book.google.client.data.GoogleBookSearchResult;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GoogleBookFinderTests {
+public class GoogleBookSearcherTests {
 
     @Test
     public void testFindByInTitleAndAuthor() {
-        GoogleBookFinder googleBookFinder = new GoogleBookFinder("red",
+        GoogleBookSearcher googleBookSearcher = new GoogleBookSearcher("red",
                 "brown",
                 null);
-        GoogleBookSearchResult result = googleBookFinder.find();
+        GoogleBookSearchResult result = googleBookSearcher.search();
 
         assertThat(result.getTotalItems()).isNotNull();
         assertThat(result.getItems()).isNotEmpty();
@@ -21,10 +21,10 @@ public class GoogleBookFinderTests {
 
     @Test
     public void testFindByInAuthor() {
-        GoogleBookFinder googleBookFinder = new GoogleBookFinder(null,
-                "Pierce Brown",
+        GoogleBookSearcher googleBookSearcher = new GoogleBookSearcher("",
+                "brown",
                 "");
-        GoogleBookSearchResult result = googleBookFinder.find();
+        GoogleBookSearchResult result = googleBookSearcher.search();
 
         assertThat(result.getTotalItems()).isNotNull();
         assertThat(result.getItems()).isNotEmpty();
@@ -32,10 +32,10 @@ public class GoogleBookFinderTests {
 
     @Test
     public void testFindByIsbn() {
-        GoogleBookFinder googleBookFinder = new GoogleBookFinder("",
+        GoogleBookSearcher googleBookSearcher = new GoogleBookSearcher("",
                 "",
                 "9783453269576");
-        GoogleBookSearchResult result = googleBookFinder.find();
+        GoogleBookSearchResult result = googleBookSearcher.search();
 
         assertThat(result.getTotalItems()).isNotNull();
         assertThat(result.getItems()).isNotEmpty();

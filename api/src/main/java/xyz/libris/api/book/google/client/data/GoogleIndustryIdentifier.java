@@ -1,4 +1,4 @@
-package xyz.libris.api.google.book.finder.data;
+package xyz.libris.api.book.google.client.data;
 
 public class GoogleIndustryIdentifier {
 

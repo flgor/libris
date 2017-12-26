@@ -1,8 +1,10 @@
-package xyz.libris.api.google.book.dto;
+package xyz.libris.api.book.google.dto;
 
-import xyz.libris.api.google.book.finder.data.*;
+import xyz.libris.api.book.google.client.data.GoogleBook;
+import xyz.libris.api.book.google.client.data.GoogleBookSearchResult;
+import xyz.libris.api.book.google.client.data.GoogleImageLink;
+import xyz.libris.api.book.google.client.data.GoogleVolumeInfo;
 
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class GoogleBookSearchResultDtoConverter {
@@ -34,13 +36,19 @@ public class GoogleBookSearchResultDtoConverter {
 
         GoogleVolumeInfo volumeInfo = googleBook.getVolumeInfo();
 
+        dto.setGoogleId(googleBook.getGoogleId());
         dto.setTitle(volumeInfo.getTitle());
-        dto.setAuthors(volumeInfo.getAuthors().stream().collect(Collectors.joining(",")));
+
+        dto.setAuthors(new GoogleAuthorsTransformers(volumeInfo.getAuthors())
+                .transform());
+
         dto.setPublisher(volumeInfo.getPublisher());
         dto.setPublishedDate(volumeInfo.getPublishedDate());
         dto.setDescription(volumeInfo.getDescription());
-        dto.setIsbn10(getIsbn10(volumeInfo));
-        dto.setIsbn13(getIsbn13(volumeInfo));
+
+        GoogleIndustryIdentifierDeterminer identifierDeterminer = new GoogleIndustryIdentifierDeterminer(volumeInfo.getIndustryIdentifiers());
+        dto.setIsbn10(identifierDeterminer.determinIsbn10());
+        dto.setIsbn13(identifierDeterminer.determinIsbn13());
 
         GoogleImageLink imageLinks = volumeInfo.getImageLinks();
         if (imageLinks != null) {
@@ -51,27 +59,4 @@ public class GoogleBookSearchResultDtoConverter {
 
         return dto;
     }
-
-    private String getIsbn10(GoogleVolumeInfo volumeInfo) {
-        return getIsbn(volumeInfo, "ISBN_10");
-    }
-
-    private String getIsbn13(GoogleVolumeInfo volumeInfo) {
-        return getIsbn(volumeInfo, "ISBN_13");
-    }
-
-    private String getIsbn(GoogleVolumeInfo volumeInfo, String identifierType) {
-
-        Optional<GoogleIndustryIdentifier> optionalIsbn = volumeInfo.getIndustryIdentifiers()
-                .stream()
-                .filter(identifier -> identifier.getType().equals(identifierType))
-                .findAny();
-
-        if (optionalIsbn.isPresent()) {
-            return optionalIsbn.get().getIdentifier();
-        }
-
-        return "";
-    }
-
 }

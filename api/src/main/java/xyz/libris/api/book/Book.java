@@ -19,6 +19,7 @@ public class Book {
 
     private String authors;
 
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     private String publisher;

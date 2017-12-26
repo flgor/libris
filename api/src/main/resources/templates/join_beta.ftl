@@ -18,7 +18,7 @@
     </div>
 
     <div class="row">
-        <form class="col-md-6 offset-md-3" action="#">
+        <form class="col-6 offset-3" action="#">
             <div class="form-group">
                 <label for="inputFullName">Full name</label>
                 <input type="text" class="form-control" id="inputFullName"
