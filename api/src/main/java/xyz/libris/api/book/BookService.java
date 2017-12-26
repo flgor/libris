@@ -21,12 +21,15 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public Book create(String author, String title, Integer year, User owner, User currentUser) {
+    public Book create(CreateBookDto createBookDto, User owner, User currentUser) {
         Book book = new Book();
 
-        book.setAuthor(author);
-        book.setTitle(title);
-        book.setYear(year);
+        book.setTitle(createBookDto.getTitle());
+        book.setAuthors(createBookDto.getAuthors());
+        book.setDescription(createBookDto.getDescription());
+        book.setPublisher(createBookDto.getPublisher());
+        book.setPublishedDate(createBookDto.getPublishedDate());
+        book.setIsbn13(createBookDto.getIsbn13());
         book.setUniqueId(RandomStringUtils.randomAlphanumeric(15));
 
         book.setOwnerId(owner.getId());

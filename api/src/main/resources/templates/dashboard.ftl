@@ -45,8 +45,8 @@
             <tr class="row">
                 <th scope="col" class="col-md-2">#</th>
                 <th scope="col" class="col-md-4">Title</th>
-                <th scope="col" class="col-md-4">Author</th>
-                <th scope="col" class="col-md-1">Year</th>
+                <th scope="col" class="col-md-4">Authors</th>
+                <th scope="col" class="col-md-1">Published Date</th>
                 <th scope="col" class="col-md-1">Actions</th>
             </tr>
             </thead>
@@ -55,8 +55,8 @@
                 <tr class="row">
                     <td class="col-md-2">${book.uniqueId}</td>
                     <td class="col-md-4">${book.title}</td>
-                    <td class="col-md-4">${book.author}</td>
-                    <td class="col-md-1">${book.year?c}</td>
+                    <td class="col-md-4">${(book.authors)!"Not defined."}</td>
+                    <td class="col-md-1">${(book.publishedDate)!"Not defined."}</td>
                     <td class="col-md-1">(soon)</td>
                 </tr>
                 </#list >
@@ -72,14 +72,29 @@
                        placeholder="Title" name="title">
             </div>
             <div class="form-group">
-                <label for="inputAuthor">Author</label>
-                <input type="text" class="form-control" id="inputAuthor"
-                       placeholder="Author" name="author">
+                <label for="inputAuthors">Authors</label>
+                <input type="text" class="form-control" id="inputAuthors"
+                       placeholder="Authors" name="authors">
             </div>
             <div class="form-group">
-                <label for="inputYear">Year</label>
-                <input type="text" class="form-control" id="inputYear" placeholder="Year"
-                       name="year">
+                <label for="inputDescription">Description</label>
+                <input type="text" class="form-control" id="inputDescription"
+                       placeholder="Description" name="description">
+            </div>
+            <div class="form-group">
+                <label for="inputPublisher">Publisher</label>
+                <input type="text" class="form-control" id="inputPublisher"
+                       placeholder="Publisher" name="publisher">
+            </div>
+            <div class="form-group">
+                <label for="inputPublishedDate">PublishedDate</label>
+                <input type="text" class="form-control" id="inputPublishedDate"
+                       placeholder="PublishedDate" name="publishedDate">
+            </div>
+            <div class="form-group">
+                <label for="inputIsbn13">ISBN 13</label>
+                <input type="text" class="form-control" id="inputIsbn13"
+                       placeholder="ISBN 13" name="isbn13">
             </div>
             <button type="submit" class="btn btn-primary" id="addBookButton">Add Book.</button>
         </form>
@@ -111,13 +126,19 @@
 
     var getRequest = function () {
         var inputTitleValue = $('#inputTitle').val();
-        var inputAuthorValue = $('#inputAuthor').val();
-        var inputYearValue = $('#inputYear').val();
+        var inputAuthorsValue = $('#inputAuthors').val();
+        var inputDescriptionValue = $('#inputDescription').val();
+        var inputPublisherValue = $('#inputPublisher').val();
+        var inputPublishedDateValue = $('#inputPublishedDate').val();
+        var inputIsbn13Value = $('#inputIsbn13').val();
 
         var createBookRequest = {};
         createBookRequest.title = inputTitleValue;
-        createBookRequest.author = inputAuthorValue;
-        createBookRequest.year = inputYearValue;
+        createBookRequest.authors = inputAuthorsValue;
+        createBookRequest.description = inputDescriptionValue;
+        createBookRequest.publisher = inputPublisherValue;
+        createBookRequest.publishedDate = inputPublishedDateValue;
+        createBookRequest.isbn13 = inputIsbn13Value;
 
         console.log('Request: ', createBookRequest);
         return createBookRequest

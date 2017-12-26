@@ -17,13 +17,21 @@ public class Book {
 
     private String title;
 
-    private String author;
+    private String authors;
 
     private String description;
 
-    private String isbnNumber;
+    private String publisher;
 
-    private Integer year;
+    private String publishedDate;
+
+    private String isbn10;
+
+    private String isbn13;
+
+    private String smallThumbnail;
+
+    private String thumbnail;
 
     private Long ownerId;
 
@@ -61,12 +69,12 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthors(String authors) {
+        this.authors = authors;
     }
 
     public String getDescription() {
@@ -77,20 +85,60 @@ public class Book {
         this.description = description;
     }
 
-    public String getIsbnNumber() {
-        return isbnNumber;
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setIsbnNumber(String isbnNumber) {
-        this.isbnNumber = isbnNumber;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 
-    public Integer getYear() {
-        return year;
+    public String getPublishedDate() {
+        return publishedDate;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setPublishedDate(String publishedDate) {
+        this.publishedDate = publishedDate;
+    }
+
+    public String getIsbn10() {
+        return isbn10;
+    }
+
+    public void setIsbn10(String isbn10) {
+        this.isbn10 = isbn10;
+    }
+
+    public String getIsbn13() {
+        return isbn13;
+    }
+
+    public void setIsbn13(String isbn13) {
+        this.isbn13 = isbn13;
+    }
+
+    public String getSmallThumbnail() {
+        return smallThumbnail;
+    }
+
+    public void setSmallThumbnail(String smallThumbnail) {
+        this.smallThumbnail = smallThumbnail;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public Long getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
     }
 
     public Long getCreatedById() {
@@ -123,13 +171,5 @@ public class Book {
 
     public void setUpdatedDate(Date updatedDate) {
         this.updatedDate = updatedDate;
-    }
-
-    public Long getOwnerId() {
-        return ownerId;
-    }
-
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
     }
 }

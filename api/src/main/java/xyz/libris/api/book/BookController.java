@@ -27,12 +27,11 @@ public class BookController {
     public Book createUser(@RequestBody CreateBookDto createBookDto) {
 
         User currentUser = securityService.getCurrentUser();
-        Book book = bookService.create(createBookDto.getAuthor(), createBookDto.getTitle(), createBookDto.getYear(),
-                currentUser, currentUser);
+        Book book = bookService.create(createBookDto, currentUser, currentUser);
 
         log.info("User with email: [" + currentUser.getEmail() + "] created book: [" + createBookDto.getTitle() + "|" +
-                createBookDto.getAuthor() + "|" +
-                createBookDto.getYear() + "].");
+                createBookDto.getAuthors() + "|" +
+                createBookDto.getPublishedDate() + "].");
 
         return book;
     }
