@@ -13,8 +13,10 @@ public class GoogleBookController {
 
 
     @GetMapping("/api/v1/book/google/search/public")
-    public GoogleBookSearchResultDto search(@RequestParam("q") String query) {
-        GoogleBookSearchResult result = new GoogleBookFinder(query).find();
+    public GoogleBookSearchResultDto search(@RequestParam(value = "inTitle", required = false) String inTitle,
+                                            @RequestParam(value = "inAuthor", required = false) String inAuthor,
+                                            @RequestParam(value = "isbn", required = false) String isbn) {
+        GoogleBookSearchResult result = new GoogleBookFinder(inTitle, inAuthor, isbn).find();
         return new GoogleBookSearchResultDtoConverter(result).convert();
     }
 }

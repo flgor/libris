@@ -9,8 +9,32 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class GoogleBookFinderTests {
 
     @Test
-    public void testFind() {
-        GoogleBookFinder googleBookFinder = new GoogleBookFinder("9781136183416");
+    public void testFindByInTitleAndAuthor() {
+        GoogleBookFinder googleBookFinder = new GoogleBookFinder("red",
+                "brown",
+                null);
+        GoogleBookSearchResult result = googleBookFinder.find();
+
+        assertThat(result.getTotalItems()).isNotNull();
+        assertThat(result.getItems()).isNotEmpty();
+    }
+
+    @Test
+    public void testFindByInAuthor() {
+        GoogleBookFinder googleBookFinder = new GoogleBookFinder(null,
+                "Pierce Brown",
+                "");
+        GoogleBookSearchResult result = googleBookFinder.find();
+
+        assertThat(result.getTotalItems()).isNotNull();
+        assertThat(result.getItems()).isNotEmpty();
+    }
+
+    @Test
+    public void testFindByIsbn() {
+        GoogleBookFinder googleBookFinder = new GoogleBookFinder("",
+                "",
+                "9783453269576");
         GoogleBookSearchResult result = googleBookFinder.find();
 
         assertThat(result.getTotalItems()).isNotNull();
