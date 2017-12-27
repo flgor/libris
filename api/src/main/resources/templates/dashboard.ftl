@@ -26,21 +26,23 @@
         <table class="table table-hover">
             <thead>
             <tr class="row">
-                <th scope="col" class="col-2">#</th>
-                <th scope="col" class="col-4">Title</th>
-                <th scope="col" class="col-4">Authors</th>
+                <th scope="col" class="col-1"></th>
+                <th scope="col" class="col-3">Title</th>
+                <th scope="col" class="col-3">Authors</th>
+                <th scope="col" class="col-2">Publisher</th>
                 <th scope="col" class="col-1">Published Date</th>
-                <th scope="col" class="col-1">Actions</th>
+                <th scope="col" class="col-2">Actions</th>
             </tr>
             </thead>
             <tbody>
                 <#list books as book>
                 <tr class="row">
-                    <td class="col-2">${book.uniqueId}</td>
-                    <td class="col-4">${book.title}</td>
-                    <td class="col-4">${(book.authors)!"Not defined."}</td>
+                    <td class="col-1"><img src="${(book.thumbnail)!"#"}" class="dashboard-list-img"></td>
+                    <td class="col-3">${(book.title)!"Not defined."}</td>
+                    <td class="col-3">${(book.authors)!"Not defined."}</td>
+                    <td class="col-2">${(book.publisher)!"Not defined."}</td>
                     <td class="col-1">${(book.publishedDate)!"Not defined."}</td>
-                    <td class="col-1">(soon)</td>
+                    <td class="col-2">(${book.uniqueId})</td>
                 </tr>
                 </#list >
             </tbody>

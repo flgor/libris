@@ -9,10 +9,7 @@ import xyz.libris.api.book.google.client.GoogleBookSearcher;
 import xyz.libris.api.book.google.client.data.GoogleBook;
 import xyz.libris.api.book.google.client.data.GoogleBookSearchResult;
 import xyz.libris.api.book.google.client.data.GoogleVolumeInfo;
-import xyz.libris.api.book.google.dto.GoogleAuthorsTransformers;
-import xyz.libris.api.book.google.dto.GoogleBookSearchResultDto;
-import xyz.libris.api.book.google.dto.GoogleBookSearchResultDtoConverter;
-import xyz.libris.api.book.google.dto.GoogleIndustryIdentifierDeterminer;
+import xyz.libris.api.book.google.dto.*;
 import xyz.libris.api.security.SecurityService;
 import xyz.libris.api.user.User;
 
@@ -50,10 +47,21 @@ public class GoogleBookController {
                 .transform());
 
         dto.setDescription(volumeInfo.getDescription());
-        dto.setIsbn13(new GoogleIndustryIdentifierDeterminer(volumeInfo.getIndustryIdentifiers())
+
+        GoogleIndustryIdentifierDeterminer industryIdentifierDeterminer =
+                new GoogleIndustryIdentifierDeterminer(volumeInfo.getIndustryIdentifiers());
+        dto.setIsbn10(industryIdentifierDeterminer
+                .determinIsbn10());
+        dto.setIsbn13(industryIdentifierDeterminer
                 .determinIsbn13());
+
         dto.setPublishedDate(volumeInfo.getPublishedDate());
         dto.setPublisher(volumeInfo.getPublisher());
+
+        GoogleImageLinkDeterminer imageLinkDeterminer =
+                new GoogleImageLinkDeterminer(volumeInfo.getImageLinks());
+        dto.setThumbnail(imageLinkDeterminer.getThumbnail());
+        dto.setSmallThumbnail(imageLinkDeterminer.getSmallThumbnail());
 
         bookService.create(dto, currentUser, currentUser);
     }

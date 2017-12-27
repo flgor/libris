@@ -27,13 +27,18 @@ public class BookService {
         book.setTitle(createBookDto.getTitle());
         book.setAuthors(createBookDto.getAuthors());
         book.setDescription(createBookDto.getDescription());
+
         book.setPublisher(createBookDto.getPublisher());
         book.setPublishedDate(createBookDto.getPublishedDate());
+
+        book.setIsbn10(createBookDto.getIsbn10());
         book.setIsbn13(createBookDto.getIsbn13());
+
+        book.setSmallThumbnail(createBookDto.getSmallThumbnail());
+        book.setThumbnail(createBookDto.getThumbnail());
+
         book.setUniqueId(RandomStringUtils.randomAlphanumeric(15));
-
         book.setOwnerId(owner.getId());
-
         book.setCreatedById(currentUser.getId());
         book.setCreatedDate(DateTime.now().toDate());
 

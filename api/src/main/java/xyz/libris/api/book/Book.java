@@ -30,8 +30,10 @@ public class Book {
 
     private String isbn13;
 
+    @Column(length = 2083)
     private String smallThumbnail;
 
+    @Column(length = 2083)
     private String thumbnail;
 
     private Long ownerId;
