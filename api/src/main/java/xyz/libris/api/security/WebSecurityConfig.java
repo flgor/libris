@@ -37,6 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/v1/**/public",
                         "/api/v1/user",
                         "/join*",
+                        "/f/callback",
                         "/js/**",
                         "/css/**",
                         "/favicon.ico")

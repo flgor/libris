@@ -27,8 +27,6 @@ public class DashboardPageController {
     }
 
     private void populateDashboardModel(Model model) {
-        //Todo move this into frontend logic.
-
         User currentUser = securityService.getCurrentUser();
         model.addAttribute("user", currentUser);
 

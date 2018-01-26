@@ -24,7 +24,7 @@ public class BookController {
     }
 
     @PostMapping("/api/v1/book")
-    public Book createUser(@RequestBody CreateBookDto createBookDto) {
+    public Book createBook(@RequestBody CreateBookDto createBookDto) {
 
         User currentUser = securityService.getCurrentUser();
         Book book = bookService.create(createBookDto, currentUser, currentUser);

@@ -17,7 +17,7 @@ public class UserService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
-    public void create(String email, String fullName, String password) {
+    public User create(String email, String fullName, String password) {
         User user = new User();
 
         user.setEmail(email);
@@ -26,11 +26,15 @@ public class UserService {
 
         user.setPassword(bCryptPasswordEncoder.encode(password));
 
-        userRepository.save(user);
+        return userRepository.save(user);
     }
 
-    public User findUserByEmail(String email) {
+    public User findByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+
+    public User findById(Long id) {
+        return userRepository.getOne(id);
     }
 
     public long count() {

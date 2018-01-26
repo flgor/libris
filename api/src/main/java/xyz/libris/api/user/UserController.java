@@ -24,10 +24,10 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody CreateUserDto createUser,
                        HttpServletRequest request) {
-        userService.create(createUser.getEmail(), createUser.getFullName(), createUser.getPassword());
+        User user = userService.create(createUser.getEmail(), createUser.getFullName(), createUser.getPassword());
         log.info("User with email: [" + createUser.getEmail() + "] created.");
 
-        securityService.autoLogin(createUser.getEmail(), createUser.getPassword(), request);
+        securityService.autoLogin(user, request);
         log.info("User with email: [" + createUser.getEmail() + "] auto login.");
     }
 
