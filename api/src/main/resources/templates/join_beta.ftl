@@ -36,7 +36,11 @@
                 <input type="password" class="form-control" id="inputPassword" placeholder="Password"
                        name="password">
             </div>
-            <button type="submit" class="btn btn-primary" id="signUpButton">Sign Up</button>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary col-12 action-button" id="signUpButton">Sign Up</button>
+                <a id="facebook" class="btn col-12 action-button" href="${facebookLoginUrl}">Sign Up with Facebook</a>
+            </div>
         </form>
     </div>
 

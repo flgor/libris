@@ -47,7 +47,14 @@
                     Remember me
                 </label>
             </div>
-            <button type="submit" class="btn btn-primary">Sign In</button>
+
+            <div class="form-group" style="padding-bottom: 10px">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary col-12 action-button">Sign In</button>
+                <a id="facebook" class="btn col-12 action-button" href="${facebookLoginUrl}">Sign In with Facebook</a>
+            </div>
         </form>
     </div>
 

@@ -28,10 +28,9 @@ public class FacebookCallbackController {
     @GetMapping("/f/callback")
     public String onCallback(HttpServletRequest request) {
         String code = request.getParameter("code");
-        String baseUrl = "http://e35c4a7d.ngrok.io";
 
         try {
-            FacebookOauthAccessTokenDto accessTokenDto = new FacebookOauthAccessTokenDeterminer(facebookConfig, baseUrl, code).determine();
+            FacebookOauthAccessTokenDto accessTokenDto = new FacebookOauthAccessTokenDeterminer(facebookConfig, code).determine();
             log.info("tokenResponse: [" + accessTokenDto.getAccessToken() + "].");
 
             FacebookUserDetailsDto facebookProfile = new FacebookUserProfileGetter(accessTokenDto.getAccessToken()).get();

@@ -8,19 +8,16 @@ public class FacebookOauthAccessTokenDeterminer {
 
     private final RestTemplate restTemplate = new RestTemplate();
     private final FacebookConfig facebookConfig;
-    private final String baseUrl;
     private final String code;
 
     public FacebookOauthAccessTokenDeterminer(FacebookConfig facebookConfig,
-                                              String baseUrl,
                                               String code) {
         this.facebookConfig = facebookConfig;
-        this.baseUrl = baseUrl;
         this.code = code;
     }
 
     public FacebookOauthAccessTokenDto determine() {
-        String loginDialogUrl = new FacebookLoginDialogUrlDeterminer(facebookConfig, baseUrl).determine();
+        String loginDialogUrl = new FacebookLoginDialogUrlDeterminer(facebookConfig).determine();
 
         String oauthTokenUrl = "https://graph.facebook.com/v2.11/oauth/access_token?" +
                 "client_id=" + this.facebookConfig.getAppId() +

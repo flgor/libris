@@ -16,4 +16,21 @@ body {
     padding-bottom: 2rem;
 }
 
+.action-button {
+    margin: 4px 0px 4px;
+}
+
+#facebook {
+    color: white;
+}
+
+#facebook {
+    background: #4267b2;
+}
+
+#facebook:hover {
+    background: #253d6f;
+}
+
+
 
