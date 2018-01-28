@@ -40,6 +40,9 @@ public class FacebookCallbackController {
         } catch (HttpClientErrorException ex) {
             log.error("Facebook call: [" + ex.getMessage() + "]. Response body: [" + ex.getResponseBodyAsString() + "].");
             return "redirect:/login?error";
+        } catch (Exception e) {
+            log.error("Failed on login callback endpoint.", e);
+            return "redirect:/login?error";
         }
 
         return "redirect:/dashboard";

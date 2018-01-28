@@ -1,5 +1,7 @@
 package xyz.libris.api.user;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,8 +17,11 @@ public class User {
     private String uniqueId;
 
     @Column(unique = true)
+    @NotBlank
     private String email;
     private String password;
+
+    @NotBlank
     private String fullName;
 
     public Long getId() {
