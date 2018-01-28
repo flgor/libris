@@ -26,7 +26,7 @@ public class FacebookService {
 
         if (authToken != null) {
             // Libris user has account already linked with facebook.
-            return userService.findById(authToken.getId());
+            return userService.findById(authToken.getUserId());
         }
 
         User user = userService.findByEmail(facebookProfile.getEmail());
