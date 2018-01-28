@@ -1,9 +1,16 @@
-##ToDo 
+## ToDo
+- Setup ssl certificates.
 
-- Public endpoint to count users.
+## In Progress
+- Switch to https.
 
-- Facebook login.
-`https://www.facebook.com/v2.11/dialog/oauth?client_id=451777061902373&redirect_uri=http://localhost:8080/f/callback`
+## Done
+- (28.01.2018) Facebook login.
+- (16.01.2018) Public endpoint to count users.
 
- https://www.facebook.com/v2.11/dialog/oauth?client_id={app-id}&redirect_uri={"https://www.domain.com/login"}
-  &state={"{st=state123abc,ds=123456789}"}
+
+### Backlog
+- Support Facebook users with no email/public profile permissions.
+
+
+
